@@ -11,27 +11,27 @@ to pin number 2 if a conditional is met.
 */
 
 int sensorPin = A1; //define pin A1 (analog pin)
-int ledPin = 2; //define pin 2 (digital pin)
+int ledPin2 = 2; //define pin 2 (digital pin)
 int sensorValue; //create variable for storing readings
+int buttonPin = 3; // create button variable
+int ledPin4= 4;// define pin 4(digital pin)
+int buttonValue;// defines button state as a variable
 
 //void setup is for configurations on start up
 void setup() { 
-    Serial.begin(9600); //initialize serial communication
-    pinMode(ledPin, OUTPUT); //define ledPin as an output
+    pinMode(ledPin1, OUTPUT); //define ledPin1 as an output
+    pinMode(ledPin2, OUTPUT); //define ledPin2 as an output
+    pinMode(buttonPin, INPUT);// define buttonPin as an input
 }
 
 void loop() {
-    sensorValue = analogRead(sensorPin); // do a sensor reading
-    
-    Serial.print("Sensor value is: "); //print a message to the serial monitor
-    Serial.println(sensorValue); //print the value to the serial monitor
-    
-    //check if sensorValue is below 50
-    if(sensorValue < 50) { 
-        digitalWrite(ledPin, HIGH); //if it is, turn on the LED on pin 2.
+    buttonValue=digitalRead(buttonPin) //set buttonValue to 1 or 0 based on if button is on or off
+    if(buttonValue=1){                 //if button is on turn on ledPin2 and turn off ledPin4
+        digitalWrite(ledPin2, HIGH);
+        digitalWrite(ledPin4, LOW);
     }
-    //if sensorValue is above 50, turn off the LED
-    else{ 
-        digitalWrite(ledPin, LOW);
+    if(buttonValue=0){                //if button is on turn on ledPin2 and turn off ledPin4
+        digitalWrite(ledPin2, LOW);
+        digitalWrite(ledPin4, HIGH);
     }
 }
