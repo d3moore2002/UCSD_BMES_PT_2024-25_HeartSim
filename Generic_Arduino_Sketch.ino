@@ -30,7 +30,7 @@ void loop() {
     buttonValue = digitalRead(buttonPin); // do a button reading
 
     //check if button is off
-    if(buttonValue == 0) {
+    if(buttonValue == LOW) {
         digitalWrite(ledPinOff, HIGH) //if off, turn on pin 4 and turn off pin 2
         digitalWrite(ledPinOn, LOW)
 
