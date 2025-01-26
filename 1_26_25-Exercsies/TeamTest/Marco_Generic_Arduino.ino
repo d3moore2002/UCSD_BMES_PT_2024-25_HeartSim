@@ -10,28 +10,33 @@ the Serial Monitor, and turn on an LED connected
 to pin number 2 if a conditional is met.
 */
 
-int sensorPin = A1; //define pin A1 (analog pin)
-int ledPin = 2; //define pin 2 (digital pin)
+int sensorPin = 3; //define pin A1 (analog pin)
+int ledPin2 = 2; //define pin 2 (digital pin)
+int ledPin4 = 4; //define pin 4
 int sensorValue; //create variable for storing readings
 
 //void setup is for configurations on start up
 void setup() { 
     Serial.begin(9600); //initialize serial communication
-    pinMode(ledPin, OUTPUT); //define ledPin as an output
+    pinMode(ledPin2, OUTPUT); //define ledPin as an output
+    pinMode(ledPin4, OUTPUT);  //define pin4 as an output
+    pinMode(sensorPin, INPUT); //define pin3 as an input
 }
 
 void loop() {
-    sensorValue = analogRead(sensorPin); // do a sensor reading
+    sensorValue = digitalRead(sensorPin); // do a sensor reading
     
     Serial.print("Sensor value is: "); //print a message to the serial monitor
     Serial.println(sensorValue); //print the value to the serial monitor
     
     //check if sensorValue is below 50
-    if(sensorValue < 50) { 
-        digitalWrite(ledPin, HIGH); //if it is, turn on the LED on pin 2.
+    if(sensorValue = HIGH) { 
+        digitalWrite(ledPin2, HIGH); //if it is, turn on the LED on pin 2.
+        digitalWrite(ledPin4, LOW);
     }
     //if sensorValue is above 50, turn off the LED
     else{ 
-        digitalWrite(ledPin, LOW);
+        digitalWrite(ledPin4, HIGH);
+        digitalWrite(ledPin2, LOW);
     }
 }
