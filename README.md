@@ -5,7 +5,7 @@ Repository for Heart Simulation Project for BMES at UC San Diego student led pro
 We have split up everyone in the software/electrical team into 3 groups, during Thursday's 2/6/2025 Meeting, everyone on software will write their name under the team they want to be a part of for future reference
 
 Pressure Sensor
-- 
+- Houston Harding
 -
 -
 -
