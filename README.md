@@ -8,7 +8,7 @@ Pressure Sensor
 - Houston Harding
 - Owen Mordue
 - Anika Yogi
--
+- Avriza Bestafa
 
 Flow Sensor 
 - Ava Van Damme
