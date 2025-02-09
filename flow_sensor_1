@@ -1,0 +1,30 @@
+[Video] How to connect water flow sensor with arduino
+https://www.youtube.com/watch?v=-uoTlJc5hGI&ab_channel=Robokart
+
+Code we used Feb 9th
+// Define pins
+const int potentiometerPin = A0; // Potentiometer connected to analog pin A0
+
+// Variables to store readings
+int potValue = 0;                // Potentiometer value
+
+void setup() {
+  // Initialize the serial communication
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Read the potentiometer value (0-1023)
+  potValue = analogRead(potentiometerPin);
+
+  // Map the potentiometer value to simulate flow rate or heart rate
+  int flowRate = map(potValue, 0, 1023, 0, 100); // Adjust the range as needed
+
+  // Print the values for debugging or visualization
+  Serial.print("Potentiometer Value: ");
+  Serial.print(potValue);
+  Serial.print("\t Simulated Flow Rate (Heart Rate): ");
+  Serial.println(flowRate);
+
+  delay(1000);  // Small delay to avoid overwhelming the serial monitor
+}
