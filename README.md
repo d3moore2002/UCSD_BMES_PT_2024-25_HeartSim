@@ -14,12 +14,10 @@ Flow Sensor
 - Ava Van Damme
 - Anirudh
 - Isabella Ly
--
+- Alisa Kunimoto
 
 Motorized Pump
 - Marco Lin
 - Yana Mkrtichyan
--
+- Simon Joseph
 - Erick O
-
-
