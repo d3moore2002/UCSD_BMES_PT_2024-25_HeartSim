@@ -9,12 +9,15 @@ Pressure Sensor
 - Owen Mordue
 - Anika Yogi
 - Avriza Bestafa
+- Shreya Bharathwajan
+
 
 Flow Sensor 
 - Ava Van Damme
 - Anirudh
 - Isabella Ly
 - Alisa Kunimoto
+- Shreya Bharathwajan
 
 Motorized Pump
 - Marco Lin
