@@ -12,14 +12,14 @@ void setup() {
 void loop() {
   pot = analogRead(potPin);  // Read the potentiometer value (0 to 1023)
   // Map potentiometer value to a flow rate range, for example: 0 - 0.0 to 5.0 liters per minute (L/min)
-  flowRate = map(pot, 0, 1023, 0, 5000) / 1000.0;  // Maps to a range of 0 to 5.0 L/min
+  flowRate = map(pot, 0, 1023, 0, 5000);  // Maps to a range of 0 to 5000 mL/min
 
   // Output the flow rate
   Serial.print("Flow Rate: ");
   Serial.print(flowRate); 
-  Serial.println(" L/min");
+  Serial.println(" mL/min");
 
- if (flowRate >= 2.5) { // If flowRate above 2.5 L/min then turn LED on, else turn it off
+ if (flowRate >= 2500) { // If flowRate above 2500 mL/min then turn LED on, else turn it off
     digitalWrite(LEDPin, HIGH);
   }
   else {
