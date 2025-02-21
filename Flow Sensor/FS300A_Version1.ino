@@ -1,6 +1,6 @@
 const int sensorPin = 2;
 const int measureInterval = 2500;
-volatile int pulseConter;
+volatile int pulseCounter;
 
 // YF-S201
 // const float factorK = 7.5;
@@ -13,18 +13,18 @@ const float factorK = 5.5;
 
 void ISRCountPulse()
 {
-  pulseConter++;
+  pulseCounter++;
 }
 
 float GetFrequency()
 {
-  pulseConter = 0;
+  pulseCounter = 0;
 
   interrupts();
   delay(measureInterval);
   noInterrupts();
 
-  return (float)pulseConter * 1000 / measureInterval; 
+  return (float)pulseCounter * 1000 / measureInterval; 
 }
 
 void setup()
