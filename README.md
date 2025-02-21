@@ -8,6 +8,8 @@ Our flow sensor has arrived! I tested it and it works, but we have a few tasks t
 2. We will wire the sensor (shouldn't take that long)
 3. We will then split up into two groups (one for testing, one for adjusting the code)
 
+K = f/Q
+
 # 2/2/2025 Update 
 We have split up everyone in the software/electrical team into 3 groups, during Thursday's 2/6/2025 Meeting, everyone on software will write their name under the team they want to be a part of for future reference
 
