@@ -1,0 +1,30 @@
+#include <Servo.h>
+
+#include <Servo.h>
+
+Servo servo;
+int angle = 10;
+
+void setup() {
+  Serial.begin(9600);  // Initialize serial communication
+  servo.attach(9);
+  servo.write(angle);
+}
+
+void loop() { 
+  // Scan from 10 to 180 degrees
+  for (angle = 10; angle < 180; angle++) {                                  
+    servo.write(angle);               
+    Serial.print("Servo Angle: ");
+    Serial.println(angle);  // Print the current angle to Serial Monitor
+    delay(30);                   
+  } 
+
+  // Now scan back from 180 to 10 degrees
+  for (angle = 180; angle > 10; angle--) {                                
+    servo.write(angle);           
+    Serial.print("Servo Angle: ");
+    Serial.println(angle);  // Print the current angle to Serial Monitor
+    delay(30);       
+  } 
+}
