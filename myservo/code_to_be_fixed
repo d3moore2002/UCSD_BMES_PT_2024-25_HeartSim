@@ -1,0 +1,31 @@
+#include <Servo.h>
+
+Servo myservo;  // Create servo object
+int pos = 0;    // Variable to store servo position
+
+void setup() {
+  Serial.begin(9600);  // Start serial communication
+  myservo.attach(9);   // Attach the servo on pin 9
+  Serial.println("Servo Sweep Test Starting...");
+}
+
+void loop() {
+  // Move from 0 to 180 degrees
+  for (pos = 0; pos <= 180; pos += 1) {
+    myservo.write(pos);  // Move servo
+    Serial.print("Servo position: ");
+    Serial.print(pos);
+    Serial.println(" degrees");
+    delay(15);  // Small delay to allow movement
+  }
+
+  // Move from 180 to 0 degrees
+  for (pos = 180; pos >= 0; pos -= 1) {
+    myservo.write(pos);  // Move servo
+    Serial.print("Servo position: ");
+    Serial.print(pos);
+    Serial.println(" degrees");
+    delay(15);  // Small delay to allow movement
+  }
+}
+(code that needs to debugged)
