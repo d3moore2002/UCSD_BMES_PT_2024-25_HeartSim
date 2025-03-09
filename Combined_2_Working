@@ -1,36 +1,49 @@
-//----------------------------------------------------------------------------------------------------------------------
-// Combined Code for SparkFun Qwiic MicroPressure Sensor & YF-S201 Flow Sensor
-// - Reads pressure (in kPa) from the MicroPressure sensor (I2C communication)
-// - Reads flow rate (in L/min) from the YF-S201 flow sensor (interrupt-based)
-// - Displays both values on the Serial Monitor
-
 #include <Servo.h>
 #include <Wire.h>                     
 #include <SparkFun_MicroPressure.h>     
 
 Servo servo;
 int angle = 10;
-bool moveServo = true; // Set to false for debugging (disables servo movement)
+bool moveServo = true;
 
-SparkFun_MicroPressure mpr; // Initialize SparkFun MicroPressure sensor
+SparkFun_MicroPressure mpr;
 
 // ------------------------- Flow Sensor Configuration -------------------------
-const int sensorPin = 2; // Digital pin for flow sensor
-const int measureInterval = 1000; // Reduce to 1s for quicker debugging
+const int sensorPin = 2; 
+const int measureInterval = 1000; 
 volatile int pulseCounter = 0; 
 
-const float factorK = 8.767; // Flow sensor calibration factor
+const float factorK = 8.767;
+
+// Timers for non-blocking execution
+unsigned long lastFlowCheck = 0;
+unsigned long lastPressureCheck = 0;
+unsigned long lastServoUpdate = 0;
+unsigned long servoDelay = 10; 
+int servoStep = 1; 
+
+bool increasing = true; // Direction of servo movement
 
 void ISRCountPulse() {
   pulseCounter++;
 }
 
 float GetFrequency() {
-  pulseCounter = 0;
-  interrupts();
-  delay(measureInterval);
-  noInterrupts();
-  return (float)pulseCounter * 1000 / measureInterval;
+  static unsigned long lastFlowTime = 0;
+  static int lastPulseCount = 0;
+  
+  unsigned long now = millis();
+  if (now - lastFlowTime >= measureInterval) {
+    noInterrupts();
+    int pulseCount = pulseCounter;
+    pulseCounter = 0;
+    interrupts();
+
+    lastFlowTime = now;
+    lastPulseCount = pulseCount;
+  }
+
+  return (float)lastPulseCount * 1000 / measureInterval;
 }
 
 void setup() {
@@ -42,7 +55,7 @@ void setup() {
 
   if (!mpr.begin()) { 
     Serial.println("Cannot connect to MicroPressure sensor. Check wiring.");
-    while (1); // Halt execution if the sensor is not found
+    while (1);
   }
 
   pinMode(sensorPin, INPUT);
@@ -50,44 +63,48 @@ void setup() {
 }
 
 void loop() {
+  unsigned long currentMillis = millis();
+
   // ------------------------- Pressure Sensor Reading -------------------------
-  float pressure_kPa = mpr.readPressure(KPA);
-  if (pressure_kPa < -1000 || pressure_kPa > 1000) { // Check for invalid readings
-    Serial.println("Pressure sensor error!");
-    pressure_kPa = -1; // Assign an error value
+  if (currentMillis - lastPressureCheck >= 500) { // Read every 500ms
+    lastPressureCheck = currentMillis;
+
+    float pressure_kPa = mpr.readPressure(KPA);
+    if (pressure_kPa < -1000 || pressure_kPa > 1000) { 
+      Serial.println("Pressure sensor error!");
+    } else {
+      Serial.print("Pressure: ");
+      Serial.print(pressure_kPa, 4);
+      Serial.println(" kPa");
+    }
   }
 
   // ------------------------- Flow Sensor Reading -------------------------
-  float frequency = GetFrequency();
-  float flow_Lmin = frequency / factorK;
+  if (currentMillis - lastFlowCheck >= measureInterval) { 
+    lastFlowCheck = currentMillis;
 
-  //--------------------------- Servo Movement ------------------------------
-  if (moveServo) {
-    for (angle = 10; angle <= 180; angle++) {                                  
-      servo.write(angle);               
-      Serial.print("Servo Angle: ");
-      Serial.println(angle);
-      delay(10);                   
-    } 
+    float frequency = GetFrequency();
+    float flow_Lmin = frequency / factorK;
 
-    for (angle = 180; angle >= 10; angle--) {                                
-      servo.write(angle);           
-      Serial.print("Servo Angle: ");
-      Serial.println(angle);
-      delay(10);       
-    } 
+    Serial.print("Flow Rate: ");
+    Serial.print(flow_Lmin, 3);
+    Serial.println(" L/min");
   }
 
-  // ------------------------- Display Readings -------------------------
-  Serial.print("Pressure: ");
-  Serial.print(pressure_kPa, 4);
-  Serial.println(" kPa");
+  // ------------------------- Servo Movement -------------------------
+  if (moveServo && currentMillis - lastServoUpdate >= servoDelay) { 
+    lastServoUpdate = currentMillis;
 
-  Serial.print("Flow Rate: ");
-  Serial.print(flow_Lmin, 3);
-  Serial.println(" L/min");
-
-  Serial.println("------------------------"); 
-
-  delay(500);
+    if (increasing) {
+      angle += servoStep;
+      if (angle >= 180) increasing = false;
+    } else {
+      angle -= servoStep;
+      if (angle <= 10) increasing = true;
+    }
+    
+    servo.write(angle);
+    Serial.print("Servo Angle: ");
+    Serial.println(angle);
+  }
 }
