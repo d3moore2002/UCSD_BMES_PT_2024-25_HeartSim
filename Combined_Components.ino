@@ -142,7 +142,7 @@ SparkFun_MicroPressure mpr;
 
 // ------------------------- Flow Sensor Configuration -------------------------
 
-const int sensorPin = 2; // Digital pin where the YF-S201 flow sensor is connected
+const int sensorPin = 2; // Digital pin where the flow sensor is connected
 const int measureInterval = 2500; // Measurement time interval in milliseconds (2.5 seconds)
 volatile int pulseCounter = 0; // Keeps track of pulses from the flow sensor
 
