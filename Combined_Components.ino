@@ -125,6 +125,13 @@ void loop() {
   - Displays both values on the Serial Monitor
 */
 
+//myservo initialization
+#include <Servo.h>
+#include <Servo.h>
+
+Servo servo;
+int angle = 10;
+
 // Include necessary libraries
 #include <Wire.h>                      // Required for I2C communication
 #include <SparkFun_MicroPressure.h>     // Library for SparkFun MicroPressure sensor
@@ -170,6 +177,10 @@ void setup() {
   // Initialize Serial Monitor for debugging
   Serial.begin(115200); 
 
+  //myservo
+  servo.attach(9);
+  servo.write(angle);
+
   // Initialize I2C communication
   Wire.begin();         
 
@@ -203,6 +214,23 @@ void loop() {
   // ------------------------- Flow Sensor Reading -------------------------
   float frequency = GetFrequency(); // Get frequency of pulses from the flow sensor
   float flow_Lmin = frequency / factorK; // Calculate flow rate in liters per minute (L/min)
+
+  //---------------------------My Servo moves ------------------------------
+    // Scan from 10 to 180 degrees
+  for (angle = 10; angle < 180; angle++) {                                  
+    servo.write(angle);               
+    Serial.print("Servo Angle: ");
+    Serial.println(angle);  // Print the current angle to Serial Monitor
+    delay(30);                   
+  } 
+
+  // Now scan back from 180 to 10 degrees
+  for (angle = 180; angle > 10; angle--) {                                
+    servo.write(angle);           
+    Serial.print("Servo Angle: ");
+    Serial.println(angle);  // Print the current angle to Serial Monitor
+    delay(30);       
+  } 
 
   // ------------------------- Display Readings -------------------------
   Serial.print("Pressure: ");
