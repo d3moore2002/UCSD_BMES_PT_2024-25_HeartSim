@@ -64,7 +64,7 @@ void loop()
   Serial.println(" (L/min)");
 }
 
-
+//----------------------------------------------------------------------------------------------------------------------
 // Pressure Only
 /*
   Qwiic MicroPressure Sensor Test - Reports Pressure in kPa
@@ -115,8 +115,9 @@ void loop() {
 
   delay(500); // Wait before next reading
 }
-// Combined code
 
+//----------------------------------------------------------------------------------------------------------------------
+// Combined code
 /*
   Combined Code for SparkFun Qwiic MicroPressure Sensor & YF-S201 Flow Sensor
   - Reads pressure (in kPa) from the MicroPressure sensor (I2C communication)
