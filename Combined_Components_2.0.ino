@@ -1,3 +1,11 @@
+// Combined code
+/*
+  Combined Code for SparkFun Qwiic MicroPressure Sensor & YF-S201 Flow Sensor
+  - Reads pressure (in kPa) from the MicroPressure sensor (I2C communication)
+  - Reads flow rate (in L/min) from the YF-S201 flow sensor (interrupt-based)
+  - Displays both values on the Serial Monitor
+*/
+
 #include <Servo.h>
 #include <Wire.h>                     
 #include <SparkFun_MicroPressure.h>     
