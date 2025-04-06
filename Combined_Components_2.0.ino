@@ -17,7 +17,8 @@ bool moveServo = true;
 SparkFun_MicroPressure mpr;
 
 // ------------------------- Flow Sensor Configuration -------------------------
-const int sensorPin = 2; 
+const int flowPin = 2; 
+const int servoPin1 = 9;
 const int measureInterval = 1000; 
 volatile int pulseCounter = 0; 
 
@@ -58,7 +59,7 @@ void setup() {
   Serial.begin(115200);
   Wire.begin();         
 
-  servo.attach(9);
+  servo.attach(servoPin1);
   servo.write(angle);
 
   if (!mpr.begin()) { 
@@ -66,8 +67,8 @@ void setup() {
     while (1);
   }
 
-  pinMode(sensorPin, INPUT);
-  attachInterrupt(digitalPinToInterrupt(sensorPin), ISRCountPulse, RISING);
+  pinMode(flowPin, INPUT);
+  attachInterrupt(digitalPinToInterrupt(flowPin), ISRCountPulse, RISING);
 }
 
 void loop() {
