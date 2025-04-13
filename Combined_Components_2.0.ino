@@ -35,7 +35,18 @@ bool increasing = true; // Direction of servo movement
 
 void ISRCountPulse() {
   pulseCounter++;
+  Serial.println("Pulse is being detected");
 }
+
+// below is a difference approach to GetFrequency.. maybe there is a logic problem below
+// float GetFrequency(){
+//   pulseCounter = 0;
+//   interrupts();
+//   delay(measureInterval);
+//   noInterrupts();
+//   return(float)pulseCounter * 1000/ measureInterval;
+// }
+    
 
 float GetFrequency() {
   static unsigned long lastFlowTime = 0;
