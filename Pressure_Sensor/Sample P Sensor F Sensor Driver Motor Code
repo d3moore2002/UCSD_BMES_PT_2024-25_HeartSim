@@ -1,0 +1,118 @@
+/*
+  Project: Pressure and Flow Monitoring with Motor Control
+  Board: SparkFun Qwiic RedBoard
+  Devices:
+    - 3x SparkFun MicroPressure Sensors (via Qwiic Mux)
+    - YF-S201 Flow Sensor
+    - NEMA23 Motor with Microstep Driver
+*/
+
+#include <Wire.h>
+#include <SparkFun_I2C_Mux_Arduino_Library.h> // Qwiic Mux library
+#include <SparkFun_MicroPressure.h>          // MicroPressure sensor library
+
+// Constants for pressure sensor conversion
+const float PSI_TO_MMHG = 51.7149; // 1 psi = 51.7149 mmHg
+
+// Mux setup
+QWIICMUX myMux;
+const uint8_t muxAddress = 0x70;  // Default address of the Qwiic Mux
+const int sensorChannels[3] = {0, 1, 2};
+SparkFun_MicroPressure pressureSensor;
+
+// Flow sensor setup
+const int flowPin = 2; // Flow sensor output pin (must be interrupt-capable)
+volatile int flowPulseCount = 0;
+float calibrationFactor = 7.5; // pulses per second per L/min (may vary)
+
+// Timer variables
+unsigned long lastFlowCheck = 0;
+const unsigned long flowInterval = 1000; // in milliseconds
+float flowRate_mL_per_sec = 0;
+
+// Stepper motor control (example using digital pins)
+const int stepPin = 9;
+const int dirPin = 8;
+
+// Interrupt service routine for flow sensor
+void flowISR() {
+  flowPulseCount++;
+}
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+
+  // Setup Mux
+  if (!myMux.begin(muxAddress)) {
+    Serial.println("Mux not detected!");
+    while (1);
+  }
+
+  // Setup flow sensor
+  pinMode(flowPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(flowPin), flowISR, RISING);
+
+  // Setup motor pins
+  pinMode(stepPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  digitalWrite(dirPin, HIGH); // set default direction
+}
+
+// Function to read pressure sensor on specific mux channel
+float readPressureSensor(int channel) {
+  myMux.setPort(channel);
+  if (!pressureSensor.begin()) {
+    Serial.print("Sensor on channel ");
+    Serial.print(channel);
+    Serial.println(" not detected.");
+    return -1.0;
+  }
+  float pressure_psi = pressureSensor.readPressure();
+  return pressure_psi * PSI_TO_MMHG; // convert to mmHg
+}
+
+// Function to control motor (example: rotate fixed number of steps)
+void stepMotor(int steps, int delayMicros) {
+  for (int i = 0; i < steps; i++) {
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(delayMicros);
+    digitalWrite(stepPin, LOW);
+    delayMicroseconds(delayMicros);
+  }
+}
+
+void loop() {
+  // Read and print pressure values
+  for (int i = 0; i < 3; i++) {
+    float pressure = readPressureSensor(sensorChannels[i]);
+    Serial.print("Pressure Sensor ");
+    Serial.print(i);
+    Serial.print(": ");
+    Serial.print(pressure);
+    Serial.println(" mmHg");
+  }
+
+  // Calculate flow rate every second
+  unsigned long currentMillis = millis();
+  if (currentMillis - lastFlowCheck >= flowInterval) {
+    noInterrupts();
+    int count = flowPulseCount;
+    flowPulseCount = 0;
+    interrupts();
+
+    float flowRate_L_per_min = count / calibrationFactor;
+    flowRate_mL_per_sec = (flowRate_L_per_min * 1000) / 60.0;
+
+    Serial.print("Flow Rate: ");
+    Serial.print(flowRate_mL_per_sec);
+    Serial.println(" mL/sec");
+
+    lastFlowCheck = currentMillis;
+  }
+
+  // Example motor control (rotate 200 steps at 1ms step delay)
+  stepMotor(200, 1000);
+
+  delay(1000); // Wait before next loop
+}
