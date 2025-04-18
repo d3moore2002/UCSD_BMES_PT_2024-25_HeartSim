@@ -88,9 +88,9 @@ void moveMotor() {
   digitalWrite(dirPin, HIGH); // Set direction
   for (int x = 0; x < 400; x++) { // Move 800 steps forward
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(1071);
+    delayMicroseconds(1458);
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(1071);
+    delayMicroseconds(1458);
   }
 }
 
