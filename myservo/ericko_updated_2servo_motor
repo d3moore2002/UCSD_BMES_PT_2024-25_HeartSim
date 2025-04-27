@@ -4,10 +4,10 @@ Servo mitralValve;
 Servo aorticValve;
 
 // Servo angles
-const int mitralOpenAngle = 10;
-const int mitralClosedAngle = 180;
-const int aorticOpenAngle = 10;
-const int aorticClosedAngle = 180;
+const int mitralOpenAngle = 10; //(need to integrate latency, angle may change)
+const int mitralClosedAngle = 25; // (need to integrate latency, angle may change)
+const int aorticOpenAngle = 10; // (need to integrate latency, angle may change)
+const int aorticClosedAngle = 25; // (need to integrate latency, angle may change)
 
 // Timing
 const unsigned long cycleLength = 857;  
