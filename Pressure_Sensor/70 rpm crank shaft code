@@ -20,7 +20,7 @@ float calibrationFactor = 7.5; // Depends on the sensor; 7.5 pulses per second p
 const int stepPin = 5;
 const int dirPin = 2;
 const int enPin = 8;
-const unsigned int stepDelayMicros = 2143; // Calculated for 70 RPM (see breakdown below)
+const unsigned int stepDelayMicros = 1071; // Calculated for 70 RPM (see breakdown below)
 
 // Interrupt service routine for counting flow pulses
 void flowISR() {
