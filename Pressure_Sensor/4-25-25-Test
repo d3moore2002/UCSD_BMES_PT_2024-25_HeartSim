@@ -22,7 +22,7 @@ const float PSI_TO_MMHG = 51.7149; // Conversion factor: 1 psi = 51.7149 mmHg
 // Mux setup
 QWIICMUX myMux;
 const uint8_t muxAddress = 0x70;  // Default I2C address for Qwiic Mux
-const int sensorChannels[3] = {0, 1, 2}; // Mux channels for each pressure sensor
+const int sensorChannels[3] = {0, 2, 3}; // Mux channels for each pressure sensor
 SparkFun_MicroPressure pressureSensor; // Create pressure sensor object
 
 // Flow sensor setup
