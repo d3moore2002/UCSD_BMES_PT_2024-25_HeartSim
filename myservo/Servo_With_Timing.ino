@@ -14,7 +14,8 @@ void setup() {
   Serial.begin(9600);  // Initialize serial communication
   servoMitral.attach(9);
   servoAortic.attach(8);
-  servo.write(initialAngle);
+  servoMitral.write(initialAngleMitral);
+  servoAortic.write(initialAngleAortic);
 }
 
 void loop() { 
