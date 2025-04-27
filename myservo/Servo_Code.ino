@@ -14,7 +14,7 @@ void setup() {
 }
 
 void loop() { 
-  // Scan from initialAngle to 180 degrees
+  // 0.67s Mitral Valve closes
   for (angle = initialAngle; angle <= 180; angle++) {                                  
     servo.write(angle);               
     Serial.print("Servo Angle: ");
@@ -22,11 +22,16 @@ void loop() {
     delay(scanDelay);                   
   } 
 
-  // Now scan back from 180 to initialAngle
+  // 0.75s Aortic Valve opens
   for (angle = 180; angle >= initialAngle; angle--) {                                
     servo.write(angle);           
     Serial.print("Servo Angle: ");
     Serial.println(angle);  // Print the current angle to Serial Monitor
     delay(scanDelay);       
   } 
+
+  // 1.1s Aortic Valve closes
+
+  // 1.167s Mitral Valve opens
+
 }
