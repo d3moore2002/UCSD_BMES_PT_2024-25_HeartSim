@@ -1,4 +1,4 @@
-/* CONNECT ON RST END OF MUX
+/* CONNECT ON RST END OF MUX, don't use MUX port 1
   Project: Pressure and Flow Monitoring with Motor Control
   Board: SparkFun Qwiic RedBoard
   Devices:
