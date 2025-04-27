@@ -6,7 +6,8 @@ int initAngleAortic = 0;  //starting angle for aortic valve (closed)
 int scanDelay = 30;       //delay (time) between movements
 
 Servo servo;
-int angle = initialAngle;
+int angleMitral = initAngleMitral;
+int angleAortic = initAngleAortic;
 
 void setup() {
   Serial.begin(9600);  // Initialize serial communication
