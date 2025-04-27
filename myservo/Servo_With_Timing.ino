@@ -1,8 +1,8 @@
 #include <Servo.h>
 
 // Adjustable Variable
-int initAngleMitral = 0;    //starting angle for mitral valve
-int initAngleAortic = 180;  //starting angle for aortic valve
+int initAngleMitral = 180;    //starting angle for mitral valve (open)
+int initAngleAortic = 0;  //starting angle for aortic valve (closed)
 int scanDelay = 30;       //delay (time) between movements
 
 Servo servo;
