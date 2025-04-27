@@ -32,7 +32,7 @@ float calibrationFactor = 7.5; // Calibration constant: pulses per second per L/
 
 // Timing for flow rate calculation
 unsigned long lastFlowCheck = 0; // Last time flow was checked
-const unsigned long flowInterval = 1000; // Flow rate calculation interval (1 second)
+const unsigned long flowInterval = 500; // Flow rate calculation interval (0.5 second)
 float flowRate_mL_per_sec = 0; // Final flow rate in mL/sec
 
 // Stepper motor control pins
