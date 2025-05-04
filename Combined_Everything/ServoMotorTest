@@ -1,0 +1,87 @@
+/*
+  Simplified Test: Motor + Servo Only (No Sensors)
+  Devices:
+    - NEMA23 Motor with Microstep Driver
+    - 2x Servos (Mitral and Aortic Valve Simulation)
+*/
+
+#include <Servo.h>
+
+// Stepper motor setup
+const int stepPin = 5;
+const int dirPin = 2;
+const int enPin = 8;
+
+unsigned long lastMotorStepMicros = 0;
+const int motorStepsPerCycle = 400;
+const unsigned long cycleLength = 857; // ms
+unsigned long stepIntervalMicros = (cycleLength * 1000UL) / motorStepsPerCycle;
+int motorStepCount = 0;
+
+// Servo setup
+Servo mitralValve;
+Servo aorticValve;
+const int mitralOpenAngle = 10;
+const int mitralClosedAngle = 25;
+const int aorticOpenAngle = 10;
+const int aorticClosedAngle = 25;
+
+const unsigned long mitralCloseTime = 492;
+const unsigned long aorticOpenTime = 551;
+const unsigned long aorticCloseTime = 807;
+const unsigned long mitralOpenTime = 857;
+unsigned long cycleStartTime = 0;
+
+void setup() {
+  pinMode(stepPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  pinMode(enPin, OUTPUT);
+
+  digitalWrite(enPin, LOW);
+  digitalWrite(dirPin, HIGH); // Fixed direction
+
+  mitralValve.attach(9);
+  aorticValve.attach(10);
+  mitralValve.write(mitralOpenAngle);
+  aorticValve.write(aorticClosedAngle);
+
+  cycleStartTime = millis();
+  lastMotorStepMicros = micros();
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+  unsigned long cycleTime = (currentMillis - cycleStartTime) % cycleLength;
+  unsigned long nowMicros = micros();
+
+  // Non-blocking Motor Step
+  if (motorStepCount < motorStepsPerCycle && (nowMicros - lastMotorStepMicros >= stepIntervalMicros)) {
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(stepPin, LOW);
+    lastMotorStepMicros = nowMicros;
+    motorStepCount++;
+  }
+
+  // Valve (Servo) Control
+  if (cycleTime < mitralCloseTime) {
+    mitralValve.write(mitralOpenAngle);
+  } else if (cycleTime < aorticOpenTime) {
+    mitralValve.write(mitralClosedAngle);
+  } else if (cycleTime >= mitralOpenTime) {
+    mitralValve.write(mitralOpenAngle);
+  }
+
+  if (cycleTime < aorticOpenTime) {
+    aorticValve.write(aorticClosedAngle);
+  } else if (cycleTime < aorticCloseTime) {
+    aorticValve.write(aorticOpenAngle);
+  } else {
+    aorticValve.write(aorticClosedAngle);
+  }
+
+  if (currentMillis - cycleStartTime >= cycleLength) {
+    cycleStartTime = currentMillis;
+    motorStepCount = 0;
+  }
+}
