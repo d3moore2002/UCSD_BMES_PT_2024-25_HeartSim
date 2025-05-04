@@ -3,6 +3,7 @@
 // -----------------------------------------------
 #include <Servo.h>
 
+//stepPin is PulsePin
 const int stepPin = 5;
 const int dirPin = 2;
 const int enPin = 8;
