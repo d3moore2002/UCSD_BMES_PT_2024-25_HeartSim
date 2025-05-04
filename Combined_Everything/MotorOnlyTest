@@ -1,0 +1,35 @@
+const int stepPin = 5;
+const int dirPin = 2;
+const int enPin = 8;
+
+const int stepsPerCycle = 400;
+const unsigned long cycleLength = 857; // ms
+
+unsigned long stepIntervalMicros = (cycleLength * 1000UL) / stepsPerCycle;
+unsigned long lastStepTime = 0;
+int stepCount = 0;
+
+void setup() {
+  pinMode(stepPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  pinMode(enPin, OUTPUT);
+  digitalWrite(enPin, LOW);
+  digitalWrite(dirPin, HIGH); // pick a direction
+  lastStepTime = micros();
+}
+
+void loop() {
+  unsigned long now = micros();
+  if (stepCount < stepsPerCycle && now - lastStepTime >= stepIntervalMicros) {
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(5); // ensure pulse is long enough for your driver
+    digitalWrite(stepPin, LOW);
+    lastStepTime = now;
+    stepCount++;
+  }
+
+  // After full cycle, reset
+  if (stepCount >= stepsPerCycle && (millis() % cycleLength) < 10) {
+    stepCount = 0;
+  }
+}
