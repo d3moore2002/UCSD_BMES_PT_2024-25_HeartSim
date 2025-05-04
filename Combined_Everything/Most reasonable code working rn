@@ -21,14 +21,14 @@ const uint8_t muxAddress = 0x70;
 const int sensorChannels[3] = {0, 2, 3};
 SparkFun_MicroPressure pressureSensor;
 unsigned long lastPressureRead = 0;
-const unsigned long pressureInterval = 950;
+const unsigned long pressureInterval = 940;
 
 // Flow sensor setup
 const int flowPin = 3;
 volatile int flowPulseCount = 0;
 float calibrationFactor = 7.5;
 unsigned long lastFlowCheck = 0;
-const unsigned long flowInterval = 950;
+const unsigned long flowInterval = 940;
 float flowRate_mL_per_sec = 0;
 
 // Stepper motor setup
