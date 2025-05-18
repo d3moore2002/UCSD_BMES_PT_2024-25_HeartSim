@@ -24,10 +24,6 @@ const int mitralClosedAngle = 25;
 const int aorticOpenAngle = 10;
 const int aorticClosedAngle = 25;
 
-const unsigned long mitralCloseTime = 492;
-const unsigned long aorticOpenTime = 551;
-const unsigned long aorticCloseTime = 807;
-const unsigned long mitralOpenTime = 857;
 unsigned long cycleStartTime = 0;
 
 void setup() {
@@ -46,6 +42,11 @@ void setup() {
 }
 
 void loop() {
+  long mitralCloseTime = 492/857 * cycleLength;
+  long aorticOpenTime = 551/857 * cycleLength;
+  long aorticCloseTime = 807/857 * cycleLength;
+  long mitralOpenTime = cycleLength;
+  
   if (buttonPin == LOW) {
     unsigned long currentMillis = millis();
     unsigned long cycleTime = (currentMillis - cycleStartTime) % cycleLength;
