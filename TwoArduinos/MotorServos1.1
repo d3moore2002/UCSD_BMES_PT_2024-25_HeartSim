@@ -5,6 +5,8 @@
 
 // Turn code on or off
 const int buttonPin = 4;
+// Controls BPM
+const int BPMPin = 3;
 
 //stepPin is PulsePin
 const int stepPin = 5;
@@ -13,8 +15,6 @@ const int enPin = 8;
 
 unsigned long lastMotorStepMicros = 0;
 const int motorStepsPerCycle = 400;
-const unsigned long cycleLength = 857;
-unsigned long stepIntervalMicros = (cycleLength * 1000UL) / motorStepsPerCycle;
 int motorStepCount = 0;
 
 Servo mitralValve;
@@ -27,10 +27,11 @@ const int aorticClosedAngle = 25;
 unsigned long cycleStartTime = 0;
 
 void setup() {
-  pinMode(buttonPin, INPUT_PULLUP)
+  pinMode(buttonPin, INPUT_PULLUP);
   pinMode(stepPin, OUTPUT);
   pinMode(dirPin, OUTPUT);
   pinMode(enPin, OUTPUT);
+  pinMode(BPMPin, INPUT_PULLUP);
   digitalWrite(enPin, LOW);
   digitalWrite(dirPin, HIGH);
   mitralValve.attach(9);
@@ -42,16 +43,23 @@ void setup() {
 }
 
 void loop() {
-  long mitralCloseTime = 492/857 * cycleLength;
-  long aorticOpenTime = 551/857 * cycleLength;
-  long aorticCloseTime = 807/857 * cycleLength;
-  long mitralOpenTime = cycleLength;
+
+  if (BPMPin == LOW && buttonPin == HIGH) { //LOW means 100 BPM
+    int cycleLength = 600;
+  } else if (buttonPin == HIGH) {
+    int cycleLength = 857;
+  }
+
+  unsigned long stepIntervalMicros = (cycleLength * 1000UL) / motorStepsPerCycle;
+  int mitralCloseTime = ((int) round(492/857)) * cycleLength;
+  int aorticOpenTime = ((int) round(551/857)) * cycleLength;
+  int aorticCloseTime = ((int) round(807/857)) * cycleLength;
+  int mitralOpenTime = cycleLength;
   
   if (buttonPin == LOW) {
     unsigned long currentMillis = millis();
     unsigned long cycleTime = (currentMillis - cycleStartTime) % cycleLength;
     unsigned long nowMicros = micros();
-  
     if (motorStepCount < motorStepsPerCycle && (nowMicros - lastMotorStepMicros >= stepIntervalMicros)) {
       digitalWrite(stepPin, HIGH);
       delayMicroseconds(10);
