@@ -22,75 +22,83 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 ## 👥 Project Team Co-Chairs ![](https://via.placeholder.com/40)
-- **Mayah Carlton**
-- **Sirasi (Mos)**
+- **Mayah Carlton**: (major, email)
+- **Sirasit (Mos) Prayotamornkul**: (major, email)
 
 ---
 
 ## 🛠 Mechanical Subleads ![](https://via.placeholder.com/40)
-- **Rohan Kumar**
-- **Devin [Last Name]**
+- **Rohan Kumar**: (major, email)
+- **Devin Otero**: (major, email)
 
 ---
 
 ## 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
+-
+-
 
----
 
 ## 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
+-
+-
+
 
 ---
 
 ## 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
+-
+-
+
 
 ---
 
 ## 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
+-
+-
 
 ---
 
 ## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
-- **Donovan Moore**
-- **Aiden Momtax**
-- **Brian [Last Name]**
+- **Donovan Moore**: (major, email)
+- **Aiden Momtax**: (major, email)
+- **Brian Helewa**: (major, email)
 
 ---
 
 ## 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
-- Marco Lin  
-- Yana Mkrtichyan  
-- Simon Joseph  
-- Sam Jimenez
+- Marco Lin: (major, email)
+- Yana Mkrtichyan: (major, email)
+- Simon Joseph: (major, email)  
+- Sam Jimenez: (major, email)
 
 ---
 
 ## 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
-- Houston Harding  
-- Owen Mordue  
-- Anika Yogi  
-- Avriza Bestafa  
-- Shreya Bharathwajan
+- Houston Harding: (major, email)  
+- Owen Mordue: (major, email)  
+- Anika Yogi: (major, email)  
+- Avriza Bestafa: (major, email)  
+- Shreya Bharathwajan: (major, email)
 
 ---
 
 ## 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
-- Ava Van Damme  
-- Anirudh [Last Name]  
-- Isabella Ly  
-- Alisa Kunimoto  
-- Shreya Bharathwajan
+- Ava Van Damme: (major, email)
+- Anirudh [Last Name]: (major, email) 
+- Isabella Ly: (major, email)  
+- Alisa Kunimoto: (major, email) 
+- Shreya Bharathwajan: (major, email)
 
 ---
 
 ## ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
-- Erick Osuno
+- Erick Osuno: (major, email)
 
 ---
 
 ## 📝 Notes
-- Please update the missing last names and team members.
 - Replace the placeholder image URLs (`https://via.placeholder.com/40`) with real icons or images relevant to each subteam or section.
