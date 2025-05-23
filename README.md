@@ -1,7 +1,51 @@
-# BMES_2024-25_HeartSim
-Repository for Heart Simulation Project for BMES at UC San Diego student led project team for the 2024-25 year. 
+# Abstract
+This project aims to build a Mechanical Simulation of the left side of the human Heart. This is a student led project team for the Biomedical Engineering Society (BMES) at UC San Diego for the 2024-25 academic year. Our Mechanical model simulates the viscosity of the fluid flow that would happen in the heart, including chambers that represent the left atrium, left ventricle, the aorta, and the capillary bed being represented in our diorama by various PVC pipes, 3D printed components, . Mechanical was in charge with the Mechanical design of the diroham, inclduing 3D printing all the parts, silicon modeling the values, and desinging the hydrualic pump system that acts as the left ventricle pushing blood throughout the rest of the ebody. The software/electrical teams wired, and coded the atucation of the Nema 23 stepper motor used for the hydraulic pump, the actuation of the Micro 9g servos to represented the opening and closing of the mitrial and aortic valves, and. The prupose of this project is to be used as a simulation tool and visual aid to greater understand the mechansims behind the heart to be used as a learning tool for students, and possibiity a resource in research into modeling and understanding the functions of the heart at academic insitutions everywhere. 
 
-# 2/22/2025 Update
+The left side of the heart is tasked with recieving oxygenated blood and transporting it throughout the body.  
+
+# Project Team Co-chairs 
+Mayah Carlton:
+Sirasi (Mos):
+
+# Project Team Mechanical Subleads
+Rohan Kumar:
+Devin:
+
+# Mechanical Valve Subteam Memebers
+
+# Mechanical Pump Subteam Members
+
+# Mechanical Dirohama Subteam Members 
+
+# Mechanical Connections Subteam Members 
+
+# Project Team Software/Electrical Subleads
+Donovan Moore:
+Aiden Momtax:
+Brian: '
+
+# Pump Actuation Subteam Members 
+- Marco Lin
+- Yana Mkrtichyan
+- Simon Joseph
+- Sam Jimenez
+
+# Pressure Sensor Subteam Members
+- Houston Harding
+- Owen Mordue
+- Anika Yogi
+- Avriza Bestafa
+- Shreya Bharathwajan
+
+# Flow Sensor Subteam Members 
+- Ava Van Damme
+- Anirudh
+- Isabella Ly
+- Alisa Kunimoto
+- Shreya Bharathwajan
+
+# Servo Actutation Subtead Members
+ - Erick Osuno 
 
 For Flow Team
 1. We tested the flow sensor on Thursday's meeting, read the tutorial link if you haven't and look at the FS300A code now that I had updated it with comments to try to understand how it works. The flow team will try testing the K value again to see it's accuracy. https://www.luisllamas.es/en/water-flow-measurement-arduino-flow-meter/ 
