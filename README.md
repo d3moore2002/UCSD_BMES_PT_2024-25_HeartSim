@@ -40,59 +40,59 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
+#### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
 -
 -
 
 
-### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
--
--
-
-
----
-
-### 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
+#### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
 -
 -
 
 
 ---
 
-### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
+#### 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
+-
+-
+
+
+---
+
+#### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
 -
 -
 
 ---
 
-### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
-- Marco Lin: (major, email)
-- Yana Mkrtichyan: (major, email)
-- Simon Joseph: (major, email)  
-- Sam Jimenez: (major, email)
+#### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
+- Marco Lin
+- Yana Mkrtichyan
+- Simon Joseph  
+- Sam Jimenez
 
 ---
 
-### 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
-- Houston Harding: (major, email)  
-- Owen Mordue: (major, email)  
-- Anika Yogi: (major, email)  
-- Avriza Bestafa: (major, email)  
-- Shreya Bharathwajan: (major, email)
+#### 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
+- Houston Harding  
+- Owen Mordue
+- Anika Yogi 
+- Avriza Bestafa  
+- Shreya Bharathwajan
 
 ---
 
-### 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
-- Ava Van Damme: (major, email)
-- Anirudh [Last Name]: (major, email) 
-- Isabella Ly: (major, email)  
-- Alisa Kunimoto: (major, email) 
-- Shreya Bharathwajan: (major, email)
+#### 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
+- Ava Van Damme
+- Anirudh [Last Name]
+- Isabella Ly 
+- Alisa Kunimoto
+- Shreya Bharathwajan
 
 ---
 
-### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
-- Erick Osuno: (major, email)
+#### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
+- Erick Osuno
 
 ---
 
