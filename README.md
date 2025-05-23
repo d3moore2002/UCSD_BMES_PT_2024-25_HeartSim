@@ -33,21 +33,13 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
+### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
 -
 -
 
 
-## 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
-*(Members to be added)*
--
--
-
-
----
-
-## 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
+### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
 -
 -
@@ -55,7 +47,15 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
+### 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
+*(Members to be added)*
+-
+-
+
+
+---
+
+### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
 -
 -
@@ -69,7 +69,7 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
+### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
 - Marco Lin: (major, email)
 - Yana Mkrtichyan: (major, email)
 - Simon Joseph: (major, email)  
@@ -77,7 +77,7 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
+### 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
 - Houston Harding: (major, email)  
 - Owen Mordue: (major, email)  
 - Anika Yogi: (major, email)  
@@ -86,7 +86,7 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
+### 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
 - Ava Van Damme: (major, email)
 - Anirudh [Last Name]: (major, email) 
 - Isabella Ly: (major, email)  
@@ -95,10 +95,10 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
-## ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
+### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
 - Erick Osuno: (major, email)
 
 ---
 
-## 📝 Notes
+#### 📝 Notes
 - Replace the placeholder image URLs (`https://via.placeholder.com/40`) with real icons or images relevant to each subteam or section.
