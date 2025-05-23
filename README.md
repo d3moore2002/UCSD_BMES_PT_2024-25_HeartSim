@@ -41,13 +41,11 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 ### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
-*(Members to be added)*
 -
 -
 
 
 ### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
-*(Members to be added)*
 -
 -
 
@@ -55,7 +53,6 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 ### 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
-*(Members to be added)*
 -
 -
 
@@ -63,7 +60,6 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 ### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
-*(Members to be added)*
 -
 -
 
