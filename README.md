@@ -12,8 +12,10 @@ This student-led project simulates the mechanical function of the **left side of
 - Building a hydraulic pump system simulating the left ventricle
 
 **Software/Electrical Team** handled:
-- Wiring and coding for the **NEMA 23 stepper motor**
-- Servo actuation of **mitral and aortic valves**
+- Driver actuation of the **NEMA 23 stepper motor** used as the pump
+- Servo actuation of **mitral and aortic valves** 
+- Wiring and coding of **pizioelectric pressure sensors** to calculate the hydrostatic pressure inside the chambers
+- Wiring and coding of **Hall effect water flow sensor** to calculate the cardiac output of our system
 
 The final system serves as a **learning and research tool** for understanding heart mechanics in academic settings.
 
