@@ -35,7 +35,7 @@ The final system serves as a **learning and research tool** for understanding he
 - **Rohan Kumar**: (major, email)
 - **Devin Otero**: (major, email)
 
----
+
 
 ## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
 - **Donovan Moore**: (major, email)
@@ -53,29 +53,19 @@ The final system serves as a **learning and research tool** for understanding he
 -
 -
 
-
----
-
 #### 🏗 Mechanical Diorama Subteam Members ![](https://via.placeholder.com/40)
 -
 -
 
-
----
-
 #### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
 -
 -
-
----
 
 #### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
 - Marco Lin
 - Yana Mkrtichyan
 - Simon Joseph  
 - Sam Jimenez
-
----
 
 #### 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
 - Houston Harding  
@@ -84,16 +74,12 @@ The final system serves as a **learning and research tool** for understanding he
 - Avriza Bestafa  
 - Shreya Bharathwajan
 
----
-
 #### 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
 - Ava Van Damme
 - Anirudh [Last Name]
 - Isabella Ly 
 - Alisa Kunimoto
 - Shreya Bharathwajan
-
----
 
 #### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
 - Erick Osuno
