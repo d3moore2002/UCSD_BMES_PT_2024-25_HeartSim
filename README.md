@@ -21,6 +21,10 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
+## 🧩 Project Components ![](https://via.placeholder.com/40)
+
+---
+
 ## 👥 Project Team Co-Chairs ![](https://via.placeholder.com/40)
 - **Mayah Carlton**: (major, email)
 - **Sirasit (Mos) Prayotamornkul**: (major, email)
