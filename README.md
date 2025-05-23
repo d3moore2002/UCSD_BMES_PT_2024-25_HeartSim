@@ -33,6 +33,13 @@ The final system serves as a **learning and research tool** for understanding he
 
 ---
 
+## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
+- **Donovan Moore**: (major, email)
+- **Aiden Momtax**: (major, email)
+- **Brian Helewa**: (major, email)
+
+---
+
 ### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
 *(Members to be added)*
 -
@@ -59,13 +66,6 @@ The final system serves as a **learning and research tool** for understanding he
 *(Members to be added)*
 -
 -
-
----
-
-## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
-- **Donovan Moore**: (major, email)
-- **Aiden Momtax**: (major, email)
-- **Brian Helewa**: (major, email)
 
 ---
 
