@@ -26,16 +26,19 @@ The final system serves as a **learning and research tool** for understanding he
 1. **Flow_Connections**  
    Responsible for directing simulated blood through the heart model. This includes tubing, valves, and joints that form the circulatory loop.
 
-2. **Mechaical_Pump_Actuation**  
+2.  **Mechanical_Valve_Servo_Actuation**  
    Controls the hydraulic mechanism simulating the left ventricle. Driven by a NEMA 23 stepper motor, it enables cyclic pumping of the working fluid.
 
-3. **Pressure_Sensors**  
+3. **Mechanical_Pump_Actuation**  
+   Controls the hydraulic mechanism simulating the left ventricle. Driven by a NEMA 23 stepper motor, it enables cyclic pumping of the working fluid.
+
+4. **Pressure_Sensors**  
    Collects pressure data from key locations in the system to monitor hemodynamic conditions and analyze flow resistance or chamber contraction accuracy.
 
-4. **Diorama_Setup**  
+5. **Diorama_Setup**  
    The full physical layout including the anatomical heart model, structural support, and the visual display for educational or research purposes.
 
-5. **Combining_Everything**  
+6. **Combining_Everything**  
    This is the full system integration zone—where all electrical, mechanical, and sensor components come together for complete functionality and testing.
    
 ---
