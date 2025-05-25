@@ -96,11 +96,11 @@ The final system serves as a **learning and research tool** for understanding he
 - Ava Van Damme
 - Anirudh [Last Name]
 - Isabella Ly 
-- Alisa Kunimoto
 - Shreya Bharathwajan
 
 #### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
 - Erick Osuno
+- Alisa Kunimoto
 
 ---
 
