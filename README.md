@@ -63,7 +63,7 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 #### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
--
+- Theodore Rothbauer: Bioengineering: BioSystems, theodorerothbauer@gmail.com
 -
 
 
