@@ -13,7 +13,7 @@ SparkFun_MicroPressure pressureSensor;
 
 const int flowPin = 3;
 volatile int flowPulseCount = 0;
-float calibrationFactor = 7.5;
+float calibrationFactor = 5.5;
 unsigned long lastRead = 0;
 const unsigned long readInterval = 940;
 
