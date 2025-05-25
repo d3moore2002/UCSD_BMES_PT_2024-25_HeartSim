@@ -23,6 +23,12 @@ The final system serves as a **learning and research tool** for understanding he
 
 ## 🧩 Project Components ![](https://via.placeholder.com/40)
 
+**Flow_Connections** 
+**Mechaical_Pump_Actuation** 
+**Pressure Sensors** 
+**Diorama Setup** 
+**Combining Everything** 
+
 ---
 
 ## 👥 Project Team Co-Chairs ![](https://via.placeholder.com/40)
