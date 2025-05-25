@@ -1,0 +1,64 @@
+#include <Servo.h>
+
+Servo mitralValve;
+Servo aorticValve;
+
+// Servo angles
+const int mitralOpenAngle = 10; //(need to integrate latency, angle may change)
+const int mitralClosedAngle = 25; // (need to integrate latency, angle may change)
+const int aorticOpenAngle = 10; // (need to integrate latency, angle may change)
+const int aorticClosedAngle = 25; // (need to integrate latency, angle may change)
+
+// Timing
+const unsigned long cycleLength = 857;  
+//Total cycle time (60000ms/70 beat) = 857 ms per beat
+
+// Key timepoints (in milliseconds) (values for 70 bpm)
+const unsigned long mitralCloseTime = 492;
+const unsigned long aorticOpenTime = 551;
+const unsigned long aorticCloseTime = 807;
+const unsigned long mitralOpenTime = 857;
+
+// Phase tracking
+unsigned long cycleStartTime = 0;
+
+void setup() {
+  Serial.begin(9600);
+
+  mitralValve.attach(9);
+  aorticValve.attach(10);
+
+  // Initial positions
+  mitralValve.write(mitralOpenAngle);   // Start open
+  aorticValve.write(aorticClosedAngle); // Start closed
+
+  cycleStartTime = millis();            // Start timing
+}
+
+void loop() {
+  unsigned long currentTime = millis();
+  unsigned long cycleTime = (currentTime - cycleStartTime) % cycleLength; //  (%Time within cycle) (% cyclelength is needed for arduino to track cycle ex: 457 % 857 = 50% through cycle, if cycle = 857 resets back, cycleTime can not exceed 857)
+
+  // Mitral Valve control
+  if (cycleTime < mitralCloseTime) {
+    mitralValve.write(mitralOpenAngle);   // Mitral opens (when mitral< 492 it remains open (angle = 10)
+  } else if (cycleTime < aorticOpenTime) {
+    mitralValve.write(mitralClosedAngle); // if 492ms<cycle<551ms, close(m)
+  } else if (cycleTime >= mitralOpenTime) {
+    mitralValve.write(mitralOpenAngle);   // if 551ms<cycle<857ms, open
+  }
+
+  // Aortic Valve control
+  if (cycleTime < aorticOpenTime) {
+    aorticValve.write(aorticClosedAngle); // if cycle<551ms, angle stays closed
+  } else if (cycleTime < aorticCloseTime) {
+    aorticValve.write(aorticOpenAngle);   // if 551ms<cycle<807ms, angle stays open
+  } else {
+    aorticValve.write(aorticClosedAngle); // if cycle = neither, close angle
+  }
+
+  // Restart cycle timing if we pass the full cycle
+  if (currentTime - cycleStartTime >= cycleLength) {
+    cycleStartTime = currentTime; 
+  }
+} 
