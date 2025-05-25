@@ -10,7 +10,7 @@ volatile int pulseCounter; // Keeps track of how many times the water flow senso
 // const float factorK = 7.5;
 
 // FS300A value updated after callibration, used to be 5
-const float factorK = 8.767
+const float factorK = 5.5
 
 // FS400A
 //const float factorK = 3.5;
