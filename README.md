@@ -76,8 +76,11 @@ The final system serves as a **learning and research tool** for understanding he
 -
 
 #### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
--
--
+- Forrest Olsen
+- David Mosqueira
+- Connor [Last Name]
+- Ryan [Last Name]
+- Sahil Jethra
 
 #### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
 - Marco Lin
