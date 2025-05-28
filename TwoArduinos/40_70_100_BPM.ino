@@ -9,13 +9,13 @@ const int enPin = 8;
 Servo mitralValve;
 Servo aorticValve;
 const int mitralOpenAngle = 10;
-const int mitralClosedAngle = 25;
+const int mitralClosedAngle = 45;
 const int aorticOpenAngle = 10;
-const int aorticClosedAngle = 25;
+const int aorticClosedAngle = 45;
 
 // BPM & Timing Setup
-int BPM = 70;
-unsigned long cycleLength = 857;  // in ms, default for 70 BPM
+int BPM = 0;
+unsigned long cycleLength = 0;  // in ms, default for 70 BPM
 int motorStepsPerCycle = 400;
 unsigned long stepIntervalMicros;
 
@@ -45,26 +45,35 @@ void setup() {
 }
 
 void loop() {
-  // Get user input once
+  // Only process new input when available
   if (Serial.available() > 0) {
-    int choice = Serial.parseInt();
-    if (choice == 1) BPM = 40;
-    else if (choice == 2) BPM = 70;
-    else if (choice == 3) BPM = 100;
-    else BPM = 70; // Default fallback
+    int menuChoice = Serial.parseInt();
+    switch (menuChoice) {
+      case 1:
+        BPM = 40;
+        break;
+      case 2:
+        BPM = 70;
+        break;
+      case 3:
+        BPM = 100;
+        break;
+    }
 
-    // Update cycle timing
-    cycleLength = 60000UL / BPM;  // 60,000 ms per minute ÷ BPM = one cycle length
+    cycleLength = 60000UL / BPM;
     stepIntervalMicros = (cycleLength * 1000UL) / motorStepsPerCycle;
 
     Serial.print("Selected BPM: ");
     Serial.println(BPM);
-    delay(1000); // Let user see result
-    cycleStartTime = millis();  // Start the first cycle
+
+    cycleStartTime = millis();  // restart timing
     lastMotorStepMicros = micros();
     motorStepCount = 0;
+
+    delay(1000);  // let user read serial message
   }
 
+  // Run servo/motor logic every loop
   unsigned long currentMillis = millis();
   unsigned long cycleTime = (currentMillis - cycleStartTime) % cycleLength;
   unsigned long nowMicros = micros();
@@ -78,13 +87,12 @@ void loop() {
     motorStepCount++;
   }
 
-  // Calculate valve times based on % of cycle length
-  unsigned long mitralOpenTime = 0;
-  unsigned long mitralCloseTime = cycleLength * 0.65;  // closes after 65%
-  unsigned long aorticOpenTime = cycleLength * 0.35;   // opens at 35%
-  unsigned long aorticCloseTime = cycleLength * 0.70;  // closes at 70%
+  // Valve timing logic
+  unsigned long mitralCloseTime = cycleLength * 0.65;
+  unsigned long aorticOpenTime = cycleLength * 0.35;
+  unsigned long aorticCloseTime = cycleLength * 0.70;
 
-  // Valve logic
+  // Valve control
   if (cycleTime < mitralCloseTime) {
     mitralValve.write(mitralOpenAngle);
   } else {
