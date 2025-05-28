@@ -11,7 +11,7 @@ void setup() {
 
 void loop() {
   digitalWrite(dirPin, HIGH); // Move forward
-  for (int x = 0; x < 800; x++) { // 4 revolutions
+  for (int x = 0; x < 800; x++) { // 2 revolutions
     digitalWrite(stepPin, HIGH);
     delayMicroseconds(1071); // Half period
     digitalWrite(stepPin, LOW);
@@ -21,7 +21,7 @@ void loop() {
   delay(1000); // 1 second pause
 
   digitalWrite(dirPin, LOW); // Reverse direction
-  for (int x = 0; x < 800; x++) { // 4 revolutions
+  for (int x = 0; x < 800; x++) { // 2 revolutions
     digitalWrite(stepPin, HIGH);
     delayMicroseconds(2143);
     digitalWrite(stepPin, LOW);
