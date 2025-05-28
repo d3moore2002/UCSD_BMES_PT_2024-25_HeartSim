@@ -15,7 +15,7 @@ This student-led project simulates the mechanical function of the **left side of
    Responsible for directing simulated blood through the heart model. This includes tubing, valves, and joints that form the circulatory loop.
 
 2.  **Mechanical_Valve_Servo_Actuation**  
-   Controls the 
+   Silicon molded valves controlled via a _____ system, where the servos act as lever arms to push the valves open and close as the heart cycles.
 
 3. **Mechanical_Pump_Actuation**  
    Controls the hydraulic mechanism simulating the left ventricle. Driven by a NEMA 23 stepper motor, it enables cyclic pumping of the working fluid.
@@ -27,7 +27,7 @@ This student-led project simulates the mechanical function of the **left side of
    The full physical layout including the anatomical heart model, structural support, and the visual display for educational or research purposes.
 
 6. **Combining_Everything**  
-   This is the full system integration zone—where all electrical, mechanical, and sensor components come together for complete functionality and testing.
+   This is the full system integration zone—where all electrical, mechanical, and sensor components come together to finalize a physical prototype.
    
 ---
 
