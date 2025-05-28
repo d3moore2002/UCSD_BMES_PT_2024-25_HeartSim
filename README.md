@@ -44,27 +44,27 @@ The final system serves as a **learning and research tool** for understanding he
 ---
 
 ## 👥 Project Team Co-Chairs ![](https://via.placeholder.com/40)
-- **Mayah Carlton**: (major, email)
-- **Sirasit (Mos) Prayotamornkul**: (major, email)
+- **Mayah Carlton**, Mechanical Engineering, mecarlton@ucsd.edu
+- **Sirasit (Mos) Prayotamornkul**, Bioengineering, sprayotamornkul@ucsd.edu
 
 ---
 
 ## 🛠 Mechanical Subleads ![](https://via.placeholder.com/40)
-- **Rohan Kumar**: (major, email)
-- **Devin Otero**: (major, email)
+- **Rohan Kumar**, Bioengineering, rgkumar@ucsd.edu
+- **Devin Otero**: Mechanical Engineering, daotero@ucsd.edu
 
 
 
 ## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
-- **Donovan Moore**: (major, email)
-- **Aiden Momtax**: (major, email)
-- **Brian Helewa**: (major, email)
+- **Donovan Moore**, Bioengineering: Biosystems, drmoore.dm2002@gmail.com
+- **Aiden Momtax**, Bioengineering: Bioinformatics, bhelewa@ucsd.edu 
+- **Brian Helewa**, Bioengineering, amomtaz@ucsd.edu
 
 ---
 
 #### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
-- Theodore Rothbauer: Bioengineering: BioSystems, theodorerothbauer@gmail.com
--
+- Theodore Rothbauer, Bioengineering: BioSystems, theodorerothbauer@gmail.com
+- Meghana Seemakurthy, Bioengineering: Biotechnlogy, mseemakurthy@ucsd.edu
 
 
 #### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
@@ -78,32 +78,34 @@ The final system serves as a **learning and research tool** for understanding he
 #### 🔗 Mechanical Connections Subteam Members ![](https://via.placeholder.com/40)
 - Forrest Olsen
 - David Mosqueira
-- Connor [Last Name]
-- Ryan [Last Name]
+- Connor
+- Ryan
 - Sahil Jethra
 
 #### 🚿 Pump Actuation Subteam ![](https://via.placeholder.com/40)
 - Marco Lin
 - Yana Mkrtichyan
-- Simon Joseph  
+- Simon Joseph, Bioengineering: Biotechnlogy 
 - Sam Jimenez
+- Houston Harding, Bioengineering
 
 #### 🔬 Pressure Sensor Subteam ![](https://via.placeholder.com/40)
-- Houston Harding  
+- Houston Harding, Bioengineering 
 - Owen Mordue
-- Anika Yogi 
-- Avriza Bestafa  
+- Anika Yogi, Bioengineering
+- Avriza Bestafa, Bioengineering
 - Shreya Bharathwajan
 
 #### 🌊 Flow Sensor Subteam ![](https://via.placeholder.com/40)
-- Ava Van Damme
-- Anirudh [Last Name]
-- Isabella Ly 
+- Ava Van Damme, Bioengineering: Biosystems
+- Anirudh, Bioengineering: Bioinformatics
+- Isabella Ly, Bioengineering: Bioinformatics
+- Kelly Guan, Bioengineeering
 - Shreya Bharathwajan
 
 #### ⚙ Servo Actuation Subteam ![](https://via.placeholder.com/40)
-- Erick Osuno
-- Alisa Kunimoto
+- Erick Osuno, Bioengineering: Biosystems
+- Alisa Kunimoto, Bioengineering
 
 ---
 
