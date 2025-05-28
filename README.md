@@ -6,6 +6,7 @@
 ## 📄 Abstract ![](https://via.placeholder.com/40)
 
 This student-led project simulates the mechanical function of the **left side of the human heart**. The model mimics blood flow viscosity using PVC pipes, 3D-printed components, and custom silicone valves to represent the left atrium, left ventricle, aorta, mitral valve, aortic valve and capillary bed. **Mechanical Team** successfully designed the diorama through laser cutting, wood working, and painting, 3D printed connection tubings and silicon molding the mitral valve and aortic valve, and built a hydraulic pump system simulating the left ventricle. **Software/Electrical Team** implemented the Driver actuation and control of the NEMA 23 stepper motor used as the pump, servo actuation and control of mitral and aortic valves, wired and coded the pizioelectric pressure sensors to calculate the hydrostatic pressure inside the chambers, and Wired and coded the Hall effect water flow sensor to calculate the cardiac output of our system as blood leaves the aorta. The final system serves as a learning and research tool for understanding heart mechanics in academic settings and learning useful engineering skills applicable across various disciplines.
+
 ---
 
 ## 🧩 Project Components ![](https://via.placeholder.com/40)
