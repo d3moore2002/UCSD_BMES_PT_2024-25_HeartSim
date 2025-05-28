@@ -4,21 +4,7 @@
 ---
 
 ## 📄 Abstract ![](https://via.placeholder.com/40)
-This student-led project simulates the mechanical function of the **left side of the human heart**. The model mimics blood flow viscosity using **PVC pipes**, **3D-printed components**, and **custom silicone valves** to represent the left atrium, left ventricle, aorta, and capillary bed.
-
-**Mechanical Team** was responsible for:
-- Designing the diorama
-- 3D printing and silicon modeling
-- Building a hydraulic pump system simulating the left ventricle
-
-**Software/Electrical Team** handled:
-- Driver actuation of the **NEMA 23 stepper motor** used as the pump
-- Servo actuation of **mitral and aortic valves** 
-- Wiring and coding of **pizioelectric pressure sensors** to calculate the hydrostatic pressure inside the chambers
-- Wiring and coding of **Hall effect water flow sensor** to calculate the cardiac output of our system
-
-The final system serves as a **learning and research tool** for understanding heart mechanics in academic settings.
-
+This student-led project simulates the mechanical function of the **left side of the human heart**. The model mimics blood flow viscosity using **PVC pipes**, **3D-printed components**, and **custom silicone valves** to represent the left atrium, left ventricle, aorta, mitral valve, aortic valve and capillary bed. **Mechanical Team** successfully designed the diorama through **laser cutting**, **wood working**, and **painting**, 3D printed **connection tubings** and **silicon molding** the **mitral valve** and **aortic valve**, and built a **hydraulic pump system** simulating the left ventricle. **Software/Electrical Team** implemented the Driver actuation and control of the **NEMA 23 stepper motor** used as the pump, servo actuation and control of **mitral and aortic valves**, wired and coded the **pizioelectric pressure sensors** to calculate the hydrostatic pressure inside the chambers, and Wired and coded the **Hall effect water flow sensor** to calculate the cardiac output of our system as blood leaves the aorta. The final system serves as a **learning and research tool** for understanding heart mechanics in academic settings and learning useful engineering skills applicable across various disciplines.
 ---
 
 ## 🧩 Project Components ![](https://via.placeholder.com/40)
@@ -27,7 +13,7 @@ The final system serves as a **learning and research tool** for understanding he
    Responsible for directing simulated blood through the heart model. This includes tubing, valves, and joints that form the circulatory loop.
 
 2.  **Mechanical_Valve_Servo_Actuation**  
-   Controls the hydraulic mechanism simulating the left ventricle. Driven by a NEMA 23 stepper motor, it enables cyclic pumping of the working fluid.
+   Controls the 
 
 3. **Mechanical_Pump_Actuation**  
    Controls the hydraulic mechanism simulating the left ventricle. Driven by a NEMA 23 stepper motor, it enables cyclic pumping of the working fluid.
@@ -53,8 +39,6 @@ The final system serves as a **learning and research tool** for understanding he
 - **Rohan Kumar**, Bioengineering, rgkumar@ucsd.edu
 - **Devin Otero**: Mechanical Engineering, daotero@ucsd.edu
 
-
-
 ## 💻 Software/Electrical Subleads ![](https://via.placeholder.com/40)
 - **Donovan Moore**, Bioengineering: Biosystems, drmoore.dm2002@gmail.com
 - **Aiden Momtax**, Bioengineering: Bioinformatics, bhelewa@ucsd.edu 
@@ -65,7 +49,6 @@ The final system serves as a **learning and research tool** for understanding he
 #### 🧪 Mechanical Valve Subteam Members ![](https://via.placeholder.com/40)
 - Theodore Rothbauer, Bioengineering: BioSystems, theodorerothbauer@gmail.com
 - Meghana Seemakurthy, Bioengineering: Biotechnlogy, mseemakurthy@ucsd.edu
-
 
 #### 🔁 Mechanical Pump Subteam Members ![](https://via.placeholder.com/40)
 -
